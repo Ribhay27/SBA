@@ -194,7 +194,9 @@ df.isnull().sum()
 # Creating the list of columns we will delete
 
 useless_cols=['AsOfDate','Program','BankNCUANumber','FranchiseCode',
-             'FranchiseName', 'BusinessAge', 'InitialInterestRate', 'ChargeOffDate']
+             'FranchiseName', 'BusinessAge', 'InitialInterestRate', 
+              'ChargeOffDate','PaidInFullDate','BorrName','BorrStreet',
+              'BorrZip','BankStreet','BankZip','ApprovalDate','DeliveryMethod']
 
 # Actually dropping the columns
 df.drop(columns=[col for col in useless_cols if col in df.columns], inplace=True) #I added this so we can keep rerunning this cell without errors
