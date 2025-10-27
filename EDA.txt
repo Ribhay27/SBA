@@ -196,7 +196,8 @@ df.isnull().sum()
 useless_cols=['AsOfDate','Program','BankNCUANumber','FranchiseCode',
              'FranchiseName', 'BusinessAge', 'InitialInterestRate', 
               'ChargeOffDate','PaidInFullDate','BorrName','BorrStreet',
-              'BorrZip','BankStreet','BankZip','ApprovalDate','DeliveryMethod']
+              'BorrZip','BankStreet','BankZip','ApprovalDate','DeliveryMethod',
+                'GrossChargeOffAmount']
 
 # Actually dropping the columns
 df.drop(columns=[col for col in useless_cols if col in df.columns], inplace=True) #I added this so we can keep rerunning this cell without errors
@@ -338,7 +339,7 @@ plt.legend(title="Period")
 plt.show()
 
 # Histograms for useful numeric variables
-histcols =  ['GrossApproval', 'SBAGuaranteedApproval', 'ApprovalFiscalYear', 'TermInMonths', 'LoanStatus', 'GrossChargeOffAmount', 'RevolverStatus', 'JobsSupported']
+histcols =  ['GrossApproval', 'SBAGuaranteedApproval', 'ApprovalFiscalYear', 'TermInMonths', 'LoanStatus', 'RevolverStatus', 'JobsSupported']
 plt.figure(figsize=(14, 10))
 for i, col in enumerate(histcols, 1):
     plt.subplot(3, 3, i)
@@ -354,7 +355,7 @@ plt.show()
 
 # Heatmap Correlation Matrix
 numeric_df = df.select_dtypes(include='number')
-numeric_df = numeric_df.drop(columns=['BankFDICNumber', 'BorrZip', 'ApprovalFiscalYear', 'NaicsCode', 'CongressionalDistrict'])
+numeric_df = numeric_df.drop(columns=['BankFDICNumber', 'ApprovalFiscalYear', 'NaicsCode', 'CongressionalDistrict'])
 fig, ax1 = plt.subplots(figsize=(11, 11))
 sns.heatmap(numeric_df.corr(), annot=True, ax=ax1)
 
@@ -363,8 +364,7 @@ sns.heatmap(numeric_df.corr(), annot=True, ax=ax1)
 
 
 #Univrate graphs 
-numeric_cols = ['GrossApproval', 'SBAGuaranteedApproval', 'TermInMonths',
-                'GrossChargeOffAmount', 'JobsSupported']
+numeric_cols = ['GrossApproval', 'SBAGuaranteedApproval', 'TermInMonths', 'JobsSupported']
 
 # Histograms for numeric variables
 plt.figure(figsize=(14, 10))
