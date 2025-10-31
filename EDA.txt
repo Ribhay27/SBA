@@ -465,7 +465,7 @@ X_test_scaled = scaler.transform(X_test)
 
 
 rf_model = RandomForestClassifier(
-    n_estimators=200,
+    n_estimators=20,
     random_state=42,
     class_weight='balanced'
 )
