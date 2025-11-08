@@ -613,4 +613,20 @@ plt.tight_layout()
 plt.savefig('logreg_coeffs.png', dpi=300, bbox_inches='tight')
 plt.show()
 
+#ROC CURVE FOR LOG REGRESSION 
+from sklearn.metrics import roc_curve, auc
 
+fpr, tpr, thresholds = roc_curve(y_test, y_prob)
+roc_auc = auc(fpr, tpr)
+
+plt.figure(figsize=(7,6))
+plt.plot(fpr, tpr, lw=2, label=f"Logistic Regression (AUC = {roc_auc:.3f})")
+plt.plot([0, 1], [0, 1], lw=1, linestyle="--", color="k", label="Chance")
+plt.xlim([0.0, 1.0]); plt.ylim([0.0, 1.05])
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Curve — Logistic Regression")
+plt.legend(loc="lower right")
+plt.tight_layout()
+plt.savefig("logreg_ROC.png", dpi=300, bbox_inches="tight")
+plt.show()
