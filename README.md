@@ -1,4 +1,4 @@
-# 🏦 SBA 7(a) Loan Repayment Prediction
+# SBA 7(a) Loan Repayment Prediction
 
 ## Overview
 This project builds a machine learning pipeline to predict **loan repayment outcomes for small businesses** using **SBA 7(a) loan data**. The focus is on large-scale data processing, model performance, and interpretability.
