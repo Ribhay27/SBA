@@ -5,7 +5,7 @@ This project builds a machine learning pipeline to predict **loan repayment outc
 
 The dataset includes **1.2M+ loan records**, enabling realistic financial risk modeling.
 
-📄 **Full Project Report (PDF):** [View here](./reports/Final_Report.pdf)
+**Full Project Report (PDF):** [View here](./reports/Final_Report.pdf)
 
 
 ---
